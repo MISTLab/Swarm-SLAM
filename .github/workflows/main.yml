@@ -39,8 +39,3 @@ jobs:
           import-token: ${{ secrets.CSLAM_TOKEN }}
           target-ros2-distro: foxy
           vcs-repo-file-url: cslam.repos
-      - uses: actions/upload-artifact@v1
-        with:
-          name: colcon-logs
-          path: ${{ steps.action_ros_ci_step.outputs.ros-workspace-directory-name }}/log
-        if: always() # upload the logs even when the build fails
