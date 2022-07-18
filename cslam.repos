@@ -1,9 +1,9 @@
 repositories:
   cslam:
     type: git
-    url: git@github.com:lajoiepy/cslam.git
+    url: https://github.com/lajoiepy/cslam.git
     version: main
   cslam_interfaces:
     type: git
-    url: git@github.com:lajoiepy/cslam_interfaces.git
+    url: https://github.com/lajoiepy/cslam_interfaces.git
     version: main
