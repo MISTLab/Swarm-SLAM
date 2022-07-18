@@ -26,7 +26,7 @@ jobs:
       - uses: ros-tooling/setup-ros@v0.3
       - name: Install Dependencies
         run: |
-              sudo add-apt-repository ppa:borglab/gtsam-release-4.0
+              sudo add-apt-repository ppa:borglab/gtsam-develop
               sudo apt-get -y update
               sudo apt install libgtsam-dev libgtsam-unstable-dev
               
