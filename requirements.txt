@@ -1,8 +1,8 @@
-networkx==2.5
-numba==0.51.2
-numpy==1.19.2
+networkx==2.7.1
+numba==0.55.1
+numpy==1.21.1
 scikit_learn==1.1.1
-scipy==1.5.2
+scipy==1.8.0
 timm==0.5.4
 #torch==1.10.2 # Install with wheel: pip install torch==1.10.2+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 #torchvision==
