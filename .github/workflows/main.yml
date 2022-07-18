@@ -24,7 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ros-tooling/setup-ros@v0.3
-      # Run the generator
+      - name: Install Dependencies
+        run: |
+              sudo add-apt-repository ppa:borglab/gtsam-release-4.0
+              sudo apt-get -y update
+              sudo apt install libgtsam-dev libgtsam-unstable-dev
+              
       - uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: cslam
