@@ -29,6 +29,7 @@ jobs:
         with:
           package-name: cslam
           import-token: ${{ secrets.CSLAM_TOKEN }}
+          target-ros2-distro: foxy
       - uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: cslam
