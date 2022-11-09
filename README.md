@@ -9,7 +9,7 @@ mkdir src
 
 vcs import src < cslam.repos 
 
-conda create --name cslam
+conda create --name cslam (TODO: use venv instead)
 
 conda activate cslam
 
