@@ -41,7 +41,3 @@ Set frontend.nn_checkpoint accordingly
 Run experiments
 
 Where to download and how to convert from ros1 bags to ros 2.
-
-M2DGR:
-Lio-sam: https://github.com/TixiaoShan/LIO-SAM/tree/ros2
-sudo apt install ros-foxy-xacro
