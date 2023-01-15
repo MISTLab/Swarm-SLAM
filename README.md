@@ -12,8 +12,8 @@ How to cite:
 ```
 
 Packages summary:
-- `cslam`: contains the Swarm-SLAM nodes;
-- `cslam_interfaces`: contains the custom ROS 2 messages;
-- `cslam_experiments`: contains examples of launch files and configurations for different setups.
+- [cslam](https://github.com/lajoiepy/cslam): contains the Swarm-SLAM nodes;
+- [cslam_interfaces](https://github.com/lajoiepy/cslam_interfaces): contains the custom ROS 2 messages;
+- [cslam_experiments](https://github.com/lajoiepy/cslam_experiments): contains examples of launch files and configurations for different setups.
 
 Follow the [start-up instructions](https://lajoiepy.github.io/cslam_documentation/html/md_startup-instructions.html) to install, build and run Swarm-SLAM.
