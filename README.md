@@ -24,3 +24,12 @@ How to cite [our paper](https://arxiv.org/abs/2301.06230):
   eprinttype = {arxiv},
 }
 ```
+
+To get the code:
+```
+sudo apt install python3-vcstool
+git clone https://github.com/MISTLab/Swarm-SLAM.git
+cd Swarm-SLAM
+mkdir src
+vcs import src < cslam.repos
+```
