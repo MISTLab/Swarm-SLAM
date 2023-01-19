@@ -25,7 +25,7 @@ How to cite [our paper](https://arxiv.org/abs/2301.06230):
 }
 ```
 
-To get the code:
+To clone the code:
 ```
 sudo apt install python3-vcstool
 git clone https://github.com/MISTLab/Swarm-SLAM.git
