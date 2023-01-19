@@ -1,0 +1,12 @@
+[submodule "cslam"]
+	path = cslam
+	url = https://github.com/lajoiepy/cslam
+[submodule "cslam_interfaces"]
+	path = cslam_interfaces
+	url = https://github.com/lajoiepy/cslam_interfaces
+[submodule "cslam_experiments"]
+	path = cslam_experiments
+	url = https://github.com/lajoiepy/cslam_experiments
+[submodule "cslam_visualization"]
+	path = cslam_visualization
+	url = https://github.com/lajoiepy/cslam_visualization
