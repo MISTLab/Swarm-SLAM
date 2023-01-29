@@ -29,7 +29,7 @@ jobs:
               pip install -r requirements.txt
       - name: Install C++ Dependencies
         run: |
-              sudo add-apt-repository ppa:borglab/gtsam-release-4.1
+              sudo add-apt-repository ppa:borglab/gtsam-release-4.1 -y
               sudo apt-get -y update
               sudo apt install libgtsam4 libgtsam-unstable4
               
