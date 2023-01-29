@@ -29,9 +29,9 @@ jobs:
               pip install -r requirements.txt
       - name: Install C++ Dependencies
         run: |
-              sudo add-apt-repository ppa:borglab/gtsam-develop
+              sudo add-apt-repository ppa:borglab/gtsam-release-4.1
               sudo apt-get -y update
-              sudo apt install libgtsam-dev libgtsam-unstable-dev
+              sudo apt install libgtsam4 libgtsam-unstable4
               
       - uses: ros-tooling/action-ros-ci@v0.2
         with:
