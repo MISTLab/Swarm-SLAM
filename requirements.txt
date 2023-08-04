@@ -8,3 +8,5 @@ scipy>=1.9.3
 sortedcontainers>=2.4.0
 torch>=1.13.0
 torchvision>=0.14.0
+distinctipy
+quaternion
