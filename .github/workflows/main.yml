@@ -34,7 +34,8 @@ jobs:
               sudo apt install libgtsam-dev libgtsam-unstable-dev
       - name: Build rtabmap
         run: |
-              mkdir /ros2_ws; mkdir /ros2_ws/src
+              mkdir /root/ros2_ws; mkdir /root/ros2_ws/src
+              cd /root/ros2_ws
               git clone https://github.com/introlab/rtabmap.git src/rtabmap
               cd src/rtabmap; git checkout 0.21.1-foxy; cd ../..
               git clone --branch ros2 https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
