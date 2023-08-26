@@ -32,17 +32,6 @@ jobs:
               sudo add-apt-repository ppa:borglab/gtsam-release-4.1 -y
               sudo apt-get -y update
               sudo apt install libgtsam-dev libgtsam-unstable-dev
-      - name: Build rtabmap
-        run: |
-              sudo mkdir /root/ros2_ws; sudo mkdir /root/ros2_ws/src
-              cd /root/ros2_ws
-              sudo git clone https://github.com/introlab/rtabmap.git src/rtabmap
-              cd src/rtabmap; git checkout 0.21.1-foxy; cd ../..
-              sudo git clone --branch ros2 https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
-              cd src/rtabmap_ros; git checkout 0.21.1-foxy; cd ../..
-              rosdep update && rosdep install --from-paths src --ignore-src -r -y
-              export MAKEFLAGS="-j6" # Can be ignored if you have a lot of RAM (>16GB)
-              sudo colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
       - uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: cslam
