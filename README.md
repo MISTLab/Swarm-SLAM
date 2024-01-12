@@ -25,7 +25,7 @@ Follow the [start-up instructions](https://lajoiepy.github.io/cslam_documentatio
 
 How to cite [our paper](https://arxiv.org/abs/2301.06230):
 ```
-@ARTICLE{lajoieSwarmSLAMSparseDecentralized2023,
+@ARTICLE{lajoieSwarmSLAM,
   author={Lajoie, Pierre-Yves and Beltrame, Giovanni},
   journal={IEEE Robotics and Automation Letters}, 
   title={Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems}, 
