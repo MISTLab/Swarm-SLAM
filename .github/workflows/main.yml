@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - uses: ros-tooling/setup-ros@v0.7.1
+      - uses: ros-tooling/setup-ros@v0.7
       - name: Install Python Dependencies
         run: |
               pip install -r requirements.txt
@@ -32,7 +32,7 @@ jobs:
               sudo add-apt-repository ppa:borglab/gtsam-release-4.1 -y
               sudo apt-get -y update
               sudo apt install libgtsam-dev libgtsam-unstable-dev
-      - uses: ros-tooling/action-ros-ci@v0.3.5
+      - uses: ros-tooling/action-ros-ci@v0.3
         with:
           package-name: cslam
           import-token: ${{ secrets.SWARMSLAM_TOKEN }}
