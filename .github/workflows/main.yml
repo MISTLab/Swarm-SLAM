@@ -18,12 +18,12 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - uses: ros-tooling/setup-ros@v0.3
+      - uses: ros-tooling/setup-ros@v0.7.1
       - name: Install Python Dependencies
         run: |
               pip install -r requirements.txt
@@ -32,9 +32,9 @@ jobs:
               sudo add-apt-repository ppa:borglab/gtsam-release-4.1 -y
               sudo apt-get -y update
               sudo apt install libgtsam-dev libgtsam-unstable-dev
-      - uses: ros-tooling/action-ros-ci@v0.2
+      - uses: ros-tooling/action-ros-ci@v0.3.5
         with:
           package-name: cslam
           import-token: ${{ secrets.SWARMSLAM_TOKEN }}
-          target-ros2-distro: foxy
+          target-ros2-distro: humble
           vcs-repo-file-url: cslam.repos
