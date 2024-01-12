@@ -2,7 +2,7 @@
 
 ![Swarm-SLAM Overview](media/system-overview.svg)
 
-[Swarm-SLAM](https://arxiv.org/abs/2301.06230) is an open-source C-SLAM system designed to be scalable, flexible, decentralized, and sparse, which are all key properties in swarm robotics. Our system supports lidar, stereo, and RGB-D sensing, and it includes a novel inter-robot loop closure prioritization technique that reduces inter-robot communication and accelerates the convergence.
+[Swarm-SLAM](https://ieeexplore.ieee.org/document/10321649) is an open-source C-SLAM system designed to be scalable, flexible, decentralized, and sparse, which are all key properties in swarm robotics. Our system supports lidar, stereo, and RGB-D sensing, and it includes a novel inter-robot loop closure prioritization technique that reduces inter-robot communication and accelerates the convergence.
 
 Look up our [Documentation](https://lajoiepy.github.io/cslam_documentation/html/index.html) and our [Start-up instructions](https://lajoiepy.github.io/cslam_documentation/html/md_startup-instructions.html)!
 
@@ -23,7 +23,7 @@ Packages summary:
 
 Follow the [start-up instructions](https://lajoiepy.github.io/cslam_documentation/html/md_startup-instructions.html) to install, build and run Swarm-SLAM.
 
-How to cite [our paper](https://arxiv.org/abs/2301.06230):
+How to cite [our paper](https://ieeexplore.ieee.org/document/10321649):
 ```
 @ARTICLE{lajoieSwarmSLAM,
   author={Lajoie, Pierre-Yves and Beltrame, Giovanni},
