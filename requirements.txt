@@ -1,6 +1,6 @@
 networkx>=2.8.8
 numba
-numpy
+numpy==1.25
 open3d
 Pillow
 scikit_learn
