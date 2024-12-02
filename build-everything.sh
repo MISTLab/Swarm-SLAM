@@ -10,8 +10,9 @@ fi
 $SUDO add-apt-repository universe
 $SUDO apt update
 
+export DEBIAN_FRONTEND=noninteractive
 
-DEPS_0="curl git sudo apt-utils ncurses-term locales"
+DEPS_0="curl git sudo apt-utils dialog locales"
 DEPS_1="libboost-all-dev cmake libtbb-dev  intel-mkl-full python3-rosdep python3-colcon-common-extensions sudo git software-properties-common python3-dev python3-full python3-pip"
 DEPS_2="ros-dev-tools ros-jazzy-desktop ros-jazzy-rtabmap ros-jazzy-rtabmap-msgs ros-jazzy-navigation2 ros-jazzy-nav2-bringup  ros-jazzy-nav2-minimal-tb* ros-jazzy-perception-pcl ros-jazzy-rtabmap-conversions ros-rolling-cv-bridge "
 
@@ -72,9 +73,13 @@ rosdep install --from-paths src -y --ignore-src --rosdistro jazzy
 
 pushd cslam_interfaces || exit 1
 colcon build
-  echo 'source "/Swarm-Slam/cslam_interfaces/install/setup.bash"' >> "$HOME/.bashrc"
-  source "/Swarm-Slam/cslam_interfaces/install/setup.bash"
+  echo 'source "/Swarm-SLAM/cslam_interfaces/install/setup.bash"' >> "$HOME/.bashrc"
+  source "/Swarm-SLAM/cslam_interfaces/install/setup.bash"
 popd || exit 1
 
 colcon build
-colcon test 
+colcon test
+
+echo 'source "/Swarm-SLAM/install/setup.bash"' >> "$HOME/.bashrc" 
+source "/Swarm-SLAM/install/setup.bash"
+
