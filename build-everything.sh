@@ -11,8 +11,8 @@ else
 fi
 
 
-DEPS_0="curl git sudo apt-utils"
-DEPS_1="libboost-all-dev cmake libtbb-dev  intel-mkl-full python3-rosdep python3-colcon-common-extensions sudo git software-properties-common locales python3-dev python3-full python3-pip"
+DEPS_0="curl git sudo apt-utils ncurses locales"
+DEPS_1="libboost-all-dev cmake libtbb-dev  intel-mkl-full python3-rosdep python3-colcon-common-extensions sudo git software-properties-common python3-dev python3-full python3-pip"
 DEPS_2="ros-dev-tools ros-jazzy-desktop ros-jazzy-rtabmap ros-jazzy-rtabmap-msgs ros-jazzy-navigation2 ros-jazzy-nav2-bringup  ros-jazzy-nav2-minimal-tb* ros-jazzy-perception-pcl ros-jazzy-rtabmap-conversions ros-rolling-cv-bridge " 
 
 if (( $EUID == 0 )); then
@@ -20,6 +20,11 @@ if (( $EUID == 0 )); then
 else
 	sudo apt install -y $DEPS_0
 fi
+
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 git clone https://github.com/anadon/cslam.git
 git clone https://github.com/lajoiepy/cslam_interfaces.git 
@@ -32,9 +37,6 @@ else
 	sudo apt install -y $DEPS_1
 fi
 
-sudo locale-gen en_US en_US.UTF-8
-sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
@@ -69,11 +71,19 @@ echo "WARNING!!! This is setting up a one-time configuration change because it i
 # Possible values are: setup.bash, setup.sh, setup.zsh
 
 echo 'source "/opt/ros/jazzy/setup.bash"' >> ~/.bashrc 
+source "/opt/ros/jazzy/setup.bash"
 
 sudo rosdep init
 
 rosdep update
 rosdep install --from-paths src -y --ignore-src --rosdistro jazzy 
 
-colcon build 
-colcon test
+pushd cslam_interfaces || exit 1
+colcon build
+  echo 'source "/Swarm-Slam/cslam_interfaces/install/setup.bash"' >> "$HOME/.bashrc"
+  source "/Swarm-Slam/cslam_interfaces/install/setup.bash"
+popd || exit 1
+
+colcon build
+colcon test 
+
