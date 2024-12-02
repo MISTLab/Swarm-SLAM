@@ -42,7 +42,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 
 
 sudo apt update
-sudo apt install $DEPS_2
+sudo apt install -y $DEPS_2
 
 pip install -r requirements.txt
 
