@@ -11,9 +11,9 @@ else
 fi
 
 
-DEPS_0="curl git sudo"
+DEPS_0="curl git sudo apt-utils"
 DEPS_1="libboost-all-dev cmake libtbb-dev  intel-mkl-full python3-rosdep python3-colcon-common-extensions sudo git software-properties-common locales python3-dev python3-full python3-pip"
-DEPS_2="ros-dev-tools ros-jazzy-desktop ros-jazzy-rtabmap ros-jazzy-rtabmap-msgs"
+DEPS_2="ros-dev-tools ros-jazzy-desktop ros-jazzy-rtabmap ros-jazzy-rtabmap-msgs ros-jazzy-navigation2 ros-jazzy-nav2-bringup  ros-jazzy-nav2-minimal-tb* ros-jazzy-perception-pcl ros-jazzy-rtabmap-conversions ros-rolling-cv-bridge " 
 
 if (( $EUID == 0 )); then
 	apt install -y $DEPS_0
@@ -21,7 +21,7 @@ else
 	sudo apt install -y $DEPS_0
 fi
 
-git clone https://github.com/lajoiepy/cslam.git 
+git clone https://github.com/anadon/cslam.git
 git clone https://github.com/lajoiepy/cslam_interfaces.git 
 git clone https://github.com/lajoiepy/cslam_experiments.git 
 git clone https://github.com/borglab/gtsam.git 
