@@ -13,7 +13,7 @@ fi
 
 DEPS_0="curl git sudo"
 DEPS_1="libboost-all-dev cmake libtbb-dev  intel-mkl-full python3-rosdep python3-colcon-common-extensions sudo git software-properties-common locales python3-dev python3-full python3-pip"
-DEPS_2="ros-dev-tools ros-jazzy-desktop"
+DEPS_2="ros-dev-tools ros-jazzy-desktop ros-jazzy-rtabmap ros-jazzy-rtabmap-msgs"
 
 if (( $EUID == 0 )); then
 	apt install -y $DEPS_0
@@ -68,11 +68,12 @@ echo "WARNING!!! This is setting up a one-time configuration change because it i
 # Replace ".bash" with your shell if you're not using bash
 # Possible values are: setup.bash, setup.sh, setup.zsh
 
-source "/opt/ros/jazzy/setup.bash"
+echo 'source "/opt/ros/jazzy/setup.bash"' >> ~/.bashrc 
 
 sudo rosdep init
 
 rosdep update
 rosdep install --from-paths src -y --ignore-src --rosdistro jazzy 
 
+colcon build 
 colcon test
