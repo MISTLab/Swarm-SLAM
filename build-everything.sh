@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 
+### Installation script for ROS 2 Jazzy
+## Credits to @anadon
+
 if (( EUID == 0 )); then
 	SUDO=""
 else
@@ -24,7 +27,7 @@ $SUDO update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-git clone https://github.com/anadon/cslam.git
+git clone https://github.com/lajoiepy/cslam.git
 git clone https://github.com/lajoiepy/cslam_interfaces.git 
 git clone https://github.com/lajoiepy/cslam_experiments.git 
 git clone https://github.com/borglab/gtsam.git 
